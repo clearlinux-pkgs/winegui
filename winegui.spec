@@ -7,9 +7,9 @@
 #
 Name     : winegui
 Version  : 2.6.1
-Release  : 1
-URL      : https://gitlab.melroy.org/melroy/winegui/-/archive/v2.6.1/winegui-v2.6.1.tar.gz
-Source0  : https://gitlab.melroy.org/melroy/winegui/-/archive/v2.6.1/winegui-v2.6.1.tar.gz
+Release  : 2
+URL      : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.1.tar.gz
+Source0  : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : AGPL-3.0
@@ -57,15 +57,15 @@ license components for the winegui package.
 
 
 %prep
-%setup -q -n winegui-v2.6.1
-cd %{_builddir}/winegui-v2.6.1
+%setup -q -c -n WineGUI-Source-v2.6.1.tar
+cd %{_builddir}/WineGUI-Source-v2.6.1.tar
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1724952845
+export SOURCE_DATE_EPOCH=1725325025
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -102,10 +102,10 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1724952845
+export SOURCE_DATE_EPOCH=1725325025
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/winegui
-cp %{_builddir}/winegui-v%{version}/LICENSE %{buildroot}/usr/share/package-licenses/winegui/f75ccad99ecd76c1f0858cbc59e64f430ffff079 || :
+cp %{_builddir}/WineGUI-Source-v%{version}.tar/LICENSE %{buildroot}/usr/share/package-licenses/winegui/f75ccad99ecd76c1f0858cbc59e64f430ffff079 || :
 export GOAMD64=v2
 GOAMD64=v2
 pushd clr-build
