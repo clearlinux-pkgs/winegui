@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : winegui
-Version  : 2.6.4
-Release  : 4
-URL      : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.4.tar.gz
-Source0  : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.4.tar.gz
+Version  : 2.6.5
+Release  : 5
+URL      : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.5.tar.gz
+Source0  : https://winegui.melroy.org/downloads/WineGUI-Source-v2.6.5.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : AGPL-3.0
@@ -57,15 +57,15 @@ license components for the winegui package.
 
 
 %prep
-%setup -q -c -n WineGUI-Source-v2.6.4.tar
-cd %{_builddir}/WineGUI-Source-v2.6.4.tar
+%setup -q -c -n WineGUI-Source-v2.6.5.tar
+cd %{_builddir}/WineGUI-Source-v2.6.5.tar
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1732200647
+export SOURCE_DATE_EPOCH=1735842923
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -102,7 +102,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1732200647
+export SOURCE_DATE_EPOCH=1735842923
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/winegui
 cp %{_builddir}/WineGUI-Source-v%{version}.tar/LICENSE %{buildroot}/usr/share/package-licenses/winegui/f75ccad99ecd76c1f0858cbc59e64f430ffff079 || :
